@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-// Author: Mya Dang
-
 void rotate(char pattern[5][5]);
  
 int main() {
@@ -11,7 +9,7 @@ int main() {
     int isPlaying = 1;
     while (isPlaying) {
         char pattern[5][5];
-        // Save the pattern
+        // Read the pattern
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5; j++) {
                 if (fscanf(stdin, "%s", &pattern[i][j]) == EOF) { // reach the end of input
@@ -33,8 +31,8 @@ int main() {
         fgets(bingoString, 225, stdin);
        
         // Read the called bingo numbers
-        bingoString[strlen(bingoString)] = 0;
-        token = strtok(bingoString, " ");
+        bingoString[strlen(bingoString)] = '\0';
+        token = strtok(bingoString, " "); 
         while (token != NULL) {
             bingoCalls[bingoLength++] = token;
             token = strtok(NULL, " ");
@@ -133,7 +131,6 @@ int main() {
         }
     }
  
-    // Close the file
     return 0;
 }
  
